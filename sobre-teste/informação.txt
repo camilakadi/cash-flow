@@ -1,0 +1,25 @@
+Consegue me entregar até segunda-feira 11/03 9h?
+
+ 
+
+Você pode seguir o protótipo em anexo juntamente com os objetivos abaixo:
+
+ 
+
+1. Criar um aplicativo simples usando Angular 12-14.
+
+2. Melhorar a interface do usuário com sugestões.
+
+3. Realizar a versão mobile do aplicativo.
+
+4. Implementar funcionalidades de registro de entradas e saídas financeiras (CRUD).
+
+5. Integrar o aplicativo com APIs externas para obtenção da cotação do dólar por exemplo.
+
+6. Implementar ao menos um teste unitário para serviço e um para componente.
+
+ 
+
+OBS: o protótipo é apenas uma referência, você tem total liberdade para usar a criatividade.
+
+Pode ser usado bibliotecas como angular cdk.
