@@ -10,13 +10,6 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    position: 1,
-    description: 'Hydrogen',
-    entry: 1.0079,
-    exit: 12525,
-    action: '',
-  },
-  {
     position: 2,
     description: 'Helium',
     entry: 4.0026,
@@ -45,12 +38,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./table-flow.component.scss'],
 })
 export class TableFlowComponent {
-  displayedColumns: string[] = [
-    'position',
-    'description',
-    'entry',
-    'exit',
-    'action',
-  ];
+  displayedColumns: string[] = ['description', 'entry', 'exit', 'action'];
   dataSource = ELEMENT_DATA;
 }

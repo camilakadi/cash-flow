@@ -11,13 +11,24 @@
         <input matInput />
       </mat-form-field>
 
-      <mat-form-field class="form-flow__input">
+      <mat-form-field>
         <mat-label>Entrada/Saída</mat-label>
-        <input matInput />
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{ food.viewValue }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <div class="form-flow__button-wrapper">
-        <button mat-raised-button color="primary" type="submit">Salvar</button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="form-flow__button"
+        >
+          Salvar
+        </button>
       </div>
     </form>
   </div>

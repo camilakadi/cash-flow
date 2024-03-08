@@ -1,20 +1,28 @@
 .form-flow {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px;
+  margin: 30px 0;
 
   &__form {
-    display: flex;
+    display: grid;
     align-items: start;
-    justify-content: center;
+    grid-template-columns: 50% 1fr 1fr auto;
     width: 100%;
-    max-width: 400px;
     margin: 0 auto;
+    gap: 20px;
+
+    @media (max-width: 1150px) {
+      grid-template-columns: none;
+    }
   }
 
   &__input {
     width: 100%;
     margin-right: 20px;
     background-color: #fff;
+  }
+
+  &__button {
+    @media (max-width: 1150px) {
+      width: 100%;
+    }
   }
 }

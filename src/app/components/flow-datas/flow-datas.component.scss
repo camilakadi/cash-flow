@@ -1,0 +1,26 @@
+.all-datas {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.datas-flow {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  &__box {
+    padding: 20px 20px 8px 20px;
+    border-radius: 4px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  &__price {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
