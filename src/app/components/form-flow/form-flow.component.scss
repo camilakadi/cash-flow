@@ -1,0 +1,20 @@
+.form-flow {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+
+  &__form {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  &__input {
+    width: 100%;
+    margin-right: 20px;
+    background-color: #fff;
+  }
+}
