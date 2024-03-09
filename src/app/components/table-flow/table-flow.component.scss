@@ -1,7 +1,20 @@
 @import "../../../styles/variables";
 
 .table-flow {
-  width: 100%;
+  &__wrapper {
+    max-width: 100%;
+  }
+
+  &__responsive {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    min-width: 600px;
+  }
 
   &__col {
     &--positive {

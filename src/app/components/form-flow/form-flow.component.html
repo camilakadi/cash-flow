@@ -3,19 +3,22 @@
     <form class="form-flow__form">
       <mat-form-field class="form-flow__input">
         <mat-label>Descrição</mat-label>
-        <input matInput />
+        <input matInput maxlength="70" />
       </mat-form-field>
 
       <mat-form-field class="form-flow__input">
         <mat-label>Valor</mat-label>
-        <input matInput />
+        <input matInput appCurrencyMask />
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Entrada/Saída</mat-label>
         <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{ food.viewValue }}
+          <mat-option
+            *ngFor="let typeFlow of typesFlow"
+            [value]="typeFlow.value"
+          >
+            {{ typeFlow.viewValue }}
           </mat-option>
         </mat-select>
       </mat-form-field>

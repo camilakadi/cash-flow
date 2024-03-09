@@ -5,6 +5,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100vh;
 }
 
 :host {
@@ -48,6 +49,13 @@ svg.material-icons:not(:last-child) {
 
 .root-class {
   height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  //flex-grow: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }

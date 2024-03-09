@@ -21,6 +21,7 @@ import { FormFlowComponent } from './components/form-flow/form-flow.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TableFlowComponent } from './components/table-flow/table-flow.component';
 import { BrlCurrencyPipe } from './pipes/currency.pipe';
+import { CurrencyMaskDirective } from './directives/currency-mask.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BrlCurrencyPipe } from './pipes/currency.pipe';
     FlowDatasComponent,
     CurrentMonthComponent,
     BrlCurrencyPipe,
+    CurrencyMaskDirective,
   ],
   imports: [
     BrowserModule,

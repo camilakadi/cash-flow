@@ -11,14 +11,14 @@ export interface PeriodicElement {
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 2,
-    description: 'Helium',
+    description: 'uma descrição aleatória',
     entry: 4.0026,
     exit: 12525,
     action: '',
   },
   {
     position: 3,
-    description: 'Lithium',
+    description: 'outra descrição aleatória',
     entry: 6.941,
     exit: 12525,
     action: '',

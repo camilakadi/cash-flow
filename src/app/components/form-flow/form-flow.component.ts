@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Food {
+interface ITypeFlow {
   value: string;
   viewValue: string;
 }
@@ -11,7 +11,7 @@ interface Food {
   templateUrl: './form-flow.component.html',
 })
 export class FormFlowComponent {
-  foods: Food[] = [
+  typesFlow: ITypeFlow[] = [
     { value: 'entry', viewValue: 'Entrada' },
     { value: 'exit', viewValue: 'Saída' },
   ];
