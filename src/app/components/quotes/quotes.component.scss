@@ -1,0 +1,47 @@
+@import "../../../styles/_variables.scss";
+
+.quotes {
+  background-color: $bg-light-color;
+  overflow-x: auto;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    min-width: 1000px;
+  }
+
+  &__box {
+    padding: 15px;
+  }
+
+  &__title {
+    font-size: 12px;
+    margin-bottom: 6px;
+    line-height: 12px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__percentage {
+    color: $white-color;
+    background-color: $bg-success-badge;
+    padding: 0 6px;
+    border-radius: 10px;
+  }
+
+  &__value {
+    color: $info-color;
+    margin-left: 5px;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+}

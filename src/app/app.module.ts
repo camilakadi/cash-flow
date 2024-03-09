@@ -22,6 +22,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TableFlowComponent } from './components/table-flow/table-flow.component';
 import { BrlCurrencyPipe } from './pipes/currency.pipe';
 import { CurrencyMaskDirective } from './directives/currency-mask.directive';
+import { QuotesComponent } from './components/quotes/quotes.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CurrencyMaskDirective } from './directives/currency-mask.directive';
     CurrentMonthComponent,
     BrlCurrencyPipe,
     CurrencyMaskDirective,
+    QuotesComponent,
   ],
   imports: [
     BrowserModule,

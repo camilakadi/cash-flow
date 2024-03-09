@@ -1,8 +1,9 @@
 @use "@angular/material" as mat;
 
 $my-primary: mat.define-palette(mat.$teal-palette, 400);
-$my-accent: mat.define-palette(mat.$pink-palette, 100);
+$my-accent: mat.define-palette(mat.$grey-palette, 100, 500);
 $my-warn: mat.define-palette(mat.$red-palette, 400);
+$my-success: mat.define-palette(mat.$green-palette, 600);
 
 $my-theme: mat.define-light-theme(
   (

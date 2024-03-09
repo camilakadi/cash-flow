@@ -1,0 +1,12 @@
+<div class="quotes">
+  <div class="quotes__container">
+    <div class="quotes__box" *ngFor="let quote of quotesList">
+      <h3 class="quotes__title">{{ quote.name }}</h3>
+
+      <div class="quotes__content">
+        <span class="quotes__percentage">{{ quote.percentage }}</span>
+        <p class="quotes__value">{{ quote.value | brlCurrency }}</p>
+      </div>
+    </div>
+  </div>
+</div>
