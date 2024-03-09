@@ -2,23 +2,39 @@
   <h3 class="current-month__title">Mês atual</h3>
 
   <div class="current-month__content">
-    <button mat-icon-button color="primary" aria-label="Próximo mês">
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Próximo mês"
+      (click)="goBackMonth()"
+    >
       <mat-icon>chevron_left</mat-icon>
     </button>
 
-    <div
-      color="primary"
-      (click)="picker.open()"
-      class="current-month__selected-month"
-    >
+    <div class="current-month__div" appearance="fill">
+      <input
+        class="current-month__input"
+        matInput
+        [matDatepicker]="picker"
+        [formControl]="date"
+      />
+      <button class="current-month__button" (click)="picker.open()">
+        {{ formatDate(date.value) }}
+      </button>
       <mat-datepicker
         #picker
-        class="current-month__datepicker"
+        [startAt]="date"
+        [startView]="'year'"
+        (monthSelected)="chosenMonthHandler($event, picker)"
       ></mat-datepicker>
-      <input matInput [matDatepicker]="picker" class="current-month__input" />
     </div>
 
-    <button mat-icon-button color="primary" aria-label="Próximo mês">
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Próximo mês"
+      (click)="advanceMonth()"
+    >
       <mat-icon>chevron_right</mat-icon>
     </button>
   </div>
