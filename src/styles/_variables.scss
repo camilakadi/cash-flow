@@ -1,8 +1,10 @@
-$primary-color: #3f51b5;
-$warning-color: #f44336;
-$accent-color: #ff4081;
+@use "@angular/material" as mat;
+@import "src/styles/_theming";
+
+$primary-color: mat.get-color-from-palette($my-primary);
+$accent-color: mat.get-color-from-palette($my-accent);
+$warning-color: mat.get-color-from-palette($my-warn);
+
 $white-color: #ffffff;
 
-$bg-color: #80cbc4;
-
-$teste-color: green;
+$bg-color: mat.get-color-from-palette($my-primary, 200);

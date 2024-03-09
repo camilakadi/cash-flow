@@ -1,7 +1,10 @@
-<mat-form-field class="example-full-width" appearance="fill">
-  <mat-label>Choose a date</mat-label>
-  <input matInput [matDatepicker]="picker" />
-  <mat-hint>MM/DD/YYYY</mat-hint>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-<button mat-raised-button (click)="picker.open()">Open</button>
+<div>
+  <h3 class="current-month__title">Entradas</h3>
+  <mat-form-field class="example-full-width">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="picker.open()">Open</button>
+</div>
