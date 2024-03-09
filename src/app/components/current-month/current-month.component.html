@@ -1,10 +1,25 @@
 <div>
-  <h3 class="current-month__title">Entradas</h3>
-  <mat-form-field class="example-full-width">
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker" />
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <button mat-raised-button (click)="picker.open()">Open</button>
+  <h3 class="current-month__title">Mês atual</h3>
+
+  <div class="current-month__content">
+    <button mat-icon-button color="primary" aria-label="Próximo mês">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <div
+      color="primary"
+      (click)="picker.open()"
+      class="current-month__selected-month"
+    >
+      <mat-datepicker
+        #picker
+        class="current-month__datepicker"
+      ></mat-datepicker>
+      <input matInput [matDatepicker]="picker" class="current-month__input" />
+    </div>
+
+    <button mat-icon-button color="primary" aria-label="Próximo mês">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
 </div>
