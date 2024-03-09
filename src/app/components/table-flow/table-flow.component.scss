@@ -1,5 +1,17 @@
+@import "../../../styles/variables";
+
 .table-flow {
   width: 100%;
+
+  &__col {
+    &--positive {
+      color: $primary-color;
+    }
+
+    &--negative {
+      color: $warning-color;
+    }
+  }
 }
 
 .mat-column-action {

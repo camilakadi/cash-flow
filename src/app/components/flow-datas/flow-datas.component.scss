@@ -1,13 +1,26 @@
+@import "../../../styles/variables";
+
 .all-datas {
   display: flex;
   margin-top: 40px;
   justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .datas-flow {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__box {
     padding: 20px 20px 8px 20px;
@@ -22,5 +35,13 @@
   &__price {
     font-size: 20px;
     font-weight: 600;
+
+    &--negative {
+      color: $warning-color;
+    }
+
+    &--positive {
+      color: $primary-color;
+    }
   }
 }

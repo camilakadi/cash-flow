@@ -1,6 +1,13 @@
+@import "../../../styles/_variables.scss";
+
 .header {
-  background-color: #b7e7d4;
+  background-color: $bg-color;
   text-align: center;
   padding-top: 25px;
   padding-bottom: 1px;
+
+  &__title {
+    color: $white-color;
+    font-weight: bold;
+  }
 }

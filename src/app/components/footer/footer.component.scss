@@ -1,10 +1,16 @@
+@import "../../../styles/variables.scss";
+
 .footer {
-  background-color: #b7e7d4;
+  background-color: $bg-color;
   padding: 20px 0 8px 0;
 
   &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &__text {
+    color: $white-color;
   }
 }

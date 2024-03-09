@@ -12,8 +12,7 @@ interface Food {
 })
 export class FormFlowComponent {
   foods: Food[] = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' },
+    { value: 'entry', viewValue: 'Entrada' },
+    { value: 'exit', viewValue: 'Saída' },
   ];
 }
