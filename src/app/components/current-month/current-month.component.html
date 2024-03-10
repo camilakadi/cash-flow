@@ -17,6 +17,7 @@
         matInput
         [matDatepicker]="picker"
         [formControl]="date"
+        (ngModelChange)="changeSelectedDate()"
       />
       <button class="current-month__button" (click)="picker.open()">
         {{ formatDate(date.value) }}

@@ -1,19 +1,39 @@
 <div class="container">
   <div class="form-flow">
-    <form class="form-flow__form">
+    <form
+      class="form-flow__form"
+      [formGroup]="transactionForm"
+      (ngSubmit)="onSubmit()"
+    >
       <mat-form-field class="form-flow__input">
         <mat-label>Descrição</mat-label>
-        <input matInput maxlength="70" />
+        <input matInput maxlength="70" formControlName="description" />
+        <mat-error
+          *ngIf="
+            transactionForm.get('description')?.invalid &&
+            transactionForm.get('description')?.touched
+          "
+        >
+          A descrição é obrigatória
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="form-flow__input">
         <mat-label>Valor</mat-label>
-        <input matInput appCurrencyMask />
+        <input matInput appCurrencyMask formControlName="amount" />
+        <mat-error
+          *ngIf="
+            transactionForm.get('amount')?.invalid &&
+            transactionForm.get('amount')?.touched
+          "
+        >
+          O valor é obrigatório
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Entrada/Saída</mat-label>
-        <mat-select>
+        <mat-select formControlName="entryType">
           <mat-option
             *ngFor="let typeFlow of typesFlow"
             [value]="typeFlow.value"
@@ -21,6 +41,15 @@
             {{ typeFlow.viewValue }}
           </mat-option>
         </mat-select>
+
+        <mat-error
+          *ngIf="
+            transactionForm.get('entryType')?.invalid &&
+            transactionForm.get('entryType')?.touched
+          "
+        >
+          O tipo de entrada é obrigatório
+        </mat-error>
       </mat-form-field>
 
       <div class="form-flow__button-wrapper">

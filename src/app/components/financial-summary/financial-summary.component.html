@@ -5,20 +5,20 @@
     <div class="datas-flow__box">
       <h3 class="datas-flow__title">Entradas</h3>
       <p class="datas-flow__price datas-flow__price--positive">
-        {{ "100000" | brlCurrency }}
+        {{ summary.totalIncome | brlCurrency }}
       </p>
     </div>
 
     <div class="datas-flow__box">
       <h3 class="datas-flow__title">Saídas</h3>
       <p class="datas-flow__price datas-flow__price--negative">
-        {{ "100000" | brlCurrency }}
+        {{ summary.totalExpense | brlCurrency }}
       </p>
     </div>
 
     <div class="datas-flow__box">
       <h3 class="datas-flow__title">Total</h3>
-      <p class="datas-flow__price">{{ "100000" | brlCurrency }}</p>
+      <p class="datas-flow__price">{{ summary.difference | brlCurrency }}</p>
     </div>
   </div>
 </div>

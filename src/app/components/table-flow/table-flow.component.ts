@@ -1,36 +1,8 @@
-import { Component } from '@angular/core';
-
-export interface PeriodicElement {
-  description: string;
-  position: number;
-  entry: number;
-  exit: number;
-  action: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    position: 2,
-    description: 'uma descrição aleatória',
-    entry: 4.0026,
-    exit: 12525,
-    action: '',
-  },
-  {
-    position: 3,
-    description: 'outra descrição aleatória',
-    entry: 6.941,
-    exit: 12525,
-    action: '',
-  },
-  {
-    position: 4,
-    description: 'Beryllium',
-    entry: 9.0122,
-    exit: 12525,
-    action: '',
-  },
-];
+import { Component, ViewChild } from '@angular/core';
+import { MatTable } from '@angular/material/table';
+import { Subscription } from 'rxjs';
+import { CashFlow } from 'src/app/models/cash-flow.model';
+import { CashFlowStorageService } from 'src/app/services/cash-flow-storage.service';
 
 @Component({
   selector: 'app-table-flow',
@@ -38,6 +10,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./table-flow.component.scss'],
 })
 export class TableFlowComponent {
-  displayedColumns: string[] = ['description', 'entry', 'exit', 'action'];
-  dataSource = ELEMENT_DATA;
+  data: CashFlow[] = [];
+  displayedColumns: string[] = ['description', 'income', 'expenses', 'action'];
+  dataSubscription!: Subscription;
+
+  @ViewChild(MatTable) table!: MatTable<CashFlow>;
+
+  constructor(private cashFlowStorageService: CashFlowStorageService) {}
+
+  ngOnInit(): void {
+    this.dataSubscription = this.cashFlowStorageService.cashFlow$.subscribe(
+      (data) => {
+        this.data = data;
+
+        if (this.table) this.table.renderRows();
+      }
+    );
+  }
+
+  editTransaction = (transaction: CashFlow, index: number) => {
+    this.cashFlowStorageService.setTransactionToUpdate(transaction, index);
+  };
+
+  deleteTransaction = (index: number) => {
+    this.cashFlowStorageService.removeTransaction(index);
+  };
 }

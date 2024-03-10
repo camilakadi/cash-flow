@@ -1,42 +1,43 @@
 <div class="container">
   <div class="table-flow__wrapper">
     <div class="table-flow__responsive mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource" class="table-flow__table">
+      <table mat-table [dataSource]="data" class="table-flow__table">
         <ng-container matColumnDef="description">
           <th mat-header-cell *matHeaderCellDef>Descrição</th>
           <td mat-cell *matCellDef="let element">{{ element.description }}</td>
         </ng-container>
 
-        <ng-container matColumnDef="entry">
+        <ng-container matColumnDef="income">
           <th mat-header-cell *matHeaderCellDef>Entrada</th>
           <td
             mat-cell
             *matCellDef="let element"
             class="table-flow__col--positive"
           >
-            {{ element.entry | brlCurrency }}
+            {{ element.income | brlCurrency }}
           </td>
         </ng-container>
 
-        <ng-container matColumnDef="exit">
+        <ng-container matColumnDef="expenses">
           <th mat-header-cell *matHeaderCellDef>Saída</th>
           <td
             mat-cell
             *matCellDef="let element"
             class="table-flow__col--negative"
           >
-            {{ element.exit | brlCurrency }}
+            {{ element.expenses | brlCurrency }}
           </td>
         </ng-container>
 
         <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let element">
+          <td mat-cell *matCellDef="let element; let i = index">
             <button
               mat-icon-button
               color="primary"
               aria-label="Editar transação"
               matTooltip="Editar transação"
+              (click)="editTransaction(element, i)"
             >
               <mat-icon>edit</mat-icon>
             </button>
@@ -46,6 +47,7 @@
               color="warn"
               aria-label="Deletar transação"
               matTooltip="Deletar transação"
+              (click)="deleteTransaction(i)"
             >
               <mat-icon>delete</mat-icon>
             </button>

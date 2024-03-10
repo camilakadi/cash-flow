@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'moment/locale/pt-br';
 import { AppComponent } from './app.component';
 import { CurrentMonthComponent } from './components/current-month/current-month.component';
-import { FlowDatasComponent } from './components/flow-datas/flow-datas.component';
+import { FinancialSummaryComponent } from './components/financial-summary/financial-summary.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormFlowComponent } from './components/form-flow/form-flow.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -43,7 +43,7 @@ import { BrlCurrencyPipe } from './pipes/currency.pipe';
     FooterComponent,
     FormFlowComponent,
     TableFlowComponent,
-    FlowDatasComponent,
+    FinancialSummaryComponent,
     CurrentMonthComponent,
     BrlCurrencyPipe,
     CurrencyMaskDirective,
