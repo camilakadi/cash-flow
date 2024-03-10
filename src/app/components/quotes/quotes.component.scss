@@ -9,7 +9,7 @@
     margin: 0 auto;
     padding: 0 40px;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     min-width: 1000px;
   }
 
@@ -33,7 +33,6 @@
 
   &__percentage {
     color: $white-color;
-    background-color: $bg-success-badge;
     padding: 0 6px;
     border-radius: 10px;
   }
@@ -43,5 +42,13 @@
     margin-left: 5px;
     font-size: 13px;
     margin-bottom: 0;
+  }
+
+  .red {
+    background-color: $bg-danger-badge;
+  }
+
+  .green {
+    background-color: $bg-success-badge;
   }
 }

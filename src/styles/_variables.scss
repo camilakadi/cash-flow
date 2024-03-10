@@ -11,4 +11,5 @@ $bg-color: mat.get-color-from-palette($my-primary, 200);
 $bg-light-color: mat.get-color-from-palette($my-accent, 100);
 
 $bg-success-badge: mat.get-color-from-palette($my-success);
+$bg-danger-badge: mat.get-color-from-palette($my-danger);
 $info-color: mat.get-color-from-palette($my-accent, 700);

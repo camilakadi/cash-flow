@@ -1,56 +1,11 @@
 import { Component } from '@angular/core';
 
 export interface IQuotes {
-  id: number;
   name: string;
-  percentage: number;
+  percentage: string;
   value: number;
+  badgeColor: string;
 }
-
-const quotesList: IQuotes[] = [
-  {
-    id: 1,
-    name: 'dolar',
-    percentage: 0.98,
-    value: 4.0026,
-  },
-  {
-    id: 2,
-    name: 'dolar',
-    percentage: 0.98,
-    value: 4.0026,
-  },
-  {
-    id: 3,
-    name: 'dolar',
-    percentage: 0.98,
-    value: 4.0026,
-  },
-  {
-    id: 4,
-    name: 'euro',
-    percentage: 0.98,
-    value: 4.0026,
-  },
-  {
-    id: 5,
-    name: 'bitcoin',
-    percentage: 0.98,
-    value: 4.0026,
-  },
-  {
-    id: 6,
-    name: 'libras',
-    percentage: 0.98,
-    value: 4.0026,
-  },
-  {
-    id: 7,
-    name: 'dolar',
-    percentage: 0.98,
-    value: 4.0026,
-  },
-];
 
 @Component({
   selector: 'app-quotes',
@@ -58,5 +13,59 @@ const quotesList: IQuotes[] = [
   styleUrls: ['./quotes.component.scss'],
 })
 export class QuotesComponent {
-  quotesList: IQuotes[] = quotesList;
+  quotesList!: IQuotes[];
+
+  ngOnInit() {
+    fetch(
+      'https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL,ARS-BRL'
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        this.quotesList = this.formatData(data);
+      });
+  }
+
+  private formatData(data: any) {
+    return Object.keys(data).map((key) => {
+      return {
+        name: this.convertName(data[key].code),
+        value: data[key].bid,
+        percentage: this.formatPercentage(data[key].pctChange),
+        badgeColor: this.getBadgeColor(data[key].pctChange),
+      };
+    });
+  }
+
+  private convertName(name: string) {
+    switch (name) {
+      case 'USD':
+        return 'Dólar';
+      case 'EUR':
+        return 'Euro';
+      case 'BTC':
+        return 'Bitcoin';
+      case 'ARS':
+        return 'Peso';
+      default:
+        return '';
+    }
+  }
+
+  private formatPercentage(percentage: string) {
+    const formated = percentage.replace('.', ',');
+
+    if (formated.startsWith('-')) {
+      return '-' + formated.substring(1);
+    } else {
+      return '+' + formated;
+    }
+  }
+
+  private getBadgeColor(percentage: string) {
+    if (percentage.startsWith('-')) {
+      return 'red';
+    } else {
+      return 'green';
+    }
+  }
 }
