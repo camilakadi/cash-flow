@@ -1,24 +1,26 @@
 <div class="container all-datas">
   <app-current-month></app-current-month>
 
-  <div class="datas-flow">
-    <div class="datas-flow__box">
-      <h3 class="datas-flow__title">Entradas</h3>
-      <p class="datas-flow__price datas-flow__price--positive">
+  <div class="financial-summary">
+    <div class="financial-summary__box">
+      <h3 class="financial-summary__title">Entradas</h3>
+      <p class="financial-summary__price financial-summary__price--positive">
         {{ summary.totalIncome | brlCurrency }}
       </p>
     </div>
 
-    <div class="datas-flow__box">
-      <h3 class="datas-flow__title">Saídas</h3>
-      <p class="datas-flow__price datas-flow__price--negative">
+    <div class="financial-summary__box">
+      <h3 class="financial-summary__title">Saídas</h3>
+      <p class="financial-summary__price financial-summary__price--negative">
         {{ summary.totalExpense | brlCurrency }}
       </p>
     </div>
 
-    <div class="datas-flow__box">
-      <h3 class="datas-flow__title">Total</h3>
-      <p class="datas-flow__price">{{ summary.difference | brlCurrency }}</p>
+    <div class="financial-summary__box">
+      <h3 class="financial-summary__title">Total</h3>
+      <p class="financial-summary__price">
+        {{ summary.difference | brlCurrency }}
+      </p>
     </div>
   </div>
 </div>
